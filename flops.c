@@ -35,10 +35,11 @@ int main(void) {
 
 	gettimeofday(&end, NULL); // 終わった時間取得
 
-	printf("正解数　%d問！！\n時間　%.15lf秒\nあなたのflops　%.15lfFLOPS！！\n", 
+	printf("正解数　%d問！！\n時間　%.15lf秒\nあなたのflops　%.15lfFLOPS！！\n東北大のスパコンまであと%ld倍\n京まであと%ld倍\n", 
 		count,((end.tv_sec - start.tv_sec) + (end.tv_usec - start.tv_usec)*1.0E-6), // countで正解数表示。時間は秒単位でもマイクロ秒単位でもそれぞれ終わった時間から始めた時間を引いて,それぞれを足す。マイクロ秒の方の*1.0E-6は意味不明。
-		((double)count) / ((end.tv_sec - start.tv_sec) + (end.tv_usec - start.tv_usec)*1.0E-6)); // １秒あたりの正解数　＝　FLOPS
-
+		((double)count) / ((end.tv_sec - start.tv_sec) + (end.tv_usec - start.tv_usec)*1.0E-6), // １秒あたりの正解数　＝　FLOPS
+		(long)(707000000000000 / (((double)count) / ((end.tv_sec - start.tv_sec) + (end.tv_usec - start.tv_usec)*1.0E-6))),
+		(long)(10000000000000000 / (((double)count) / ((end.tv_sec - start.tv_sec) + (end.tv_usec - start.tv_usec)*1.0E-6))));
 	return 0;
 }
 
