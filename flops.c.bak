@@ -5,13 +5,21 @@
 
 int main(void) {
 
-	int n, count = 0; // nはforのカウント、countは正解数
+	int n, count = 0, sentaku; // nはforのカウント、countは正解数
 	double a, b, player[10]; // a,bは問題、playerは入力されたもの
 	struct timeval start, end;
 
 	srand(time(NULL)); // 乱数の種まき
 
 	printf("スパコンと計算能力比べ!!!\n");
+
+	printf("練習は１、測定は２を押してください。＞");
+	scanf("%1d", &sentaku);
+	if(sentaku == 1) {
+		printf("練習を開始するためにはエンターキーを押してください。＞")
+		rewind(stdin);
+		getchar();
+
 
 	printf("測定を開始するためにはエンターキーを押してください。＞");
 	rewind(stdin);
