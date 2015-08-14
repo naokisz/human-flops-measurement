@@ -8,6 +8,6 @@
 cloneなどをした後、flops.cをgccなどでコンパイルしてください。
 
 clone  
-    $ git clone https://github.com/naokisz/human-flops-measurement.git  
+      $ git clone https://github.com/naokisz/human-flops-measurement.git  
 Cプログラムのコンパイル  
-    $ gcc -o flops flops.c  
+      $ gcc -o flops flops.c  
