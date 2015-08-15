@@ -1,11 +1,11 @@
 #include <stdio.h>
-#include <sys/time.h> // to use gettimeofday :16,37
-#include "mondai.c"
+#include <sys/time.h> // to use gettimeofday :15,17
+#include "mondai.c" // to use mondai() :16
 
 int main(void) {
 
 	int count = 0; // nはforのカウント、countは正解数
-	struct timeval start, end;
+	struct timeval start, end; // to use gettimeofday()
 
 	printf("スパコンと計算能力比べ!!!\n");
 	printf("測定を開始するためにはエンターキーを押してください。＞");
@@ -13,7 +13,7 @@ int main(void) {
 	getchar();
 
 	gettimeofday(&start, NULL); // 始めた時間取得
-	count = mondai(10);
+	count = mondai(10); // in mondai.c １０問の問題作成。
 	gettimeofday(&end, NULL); // 終わった時間取得
 
 	printf("正解数　%d問！！\n時間　%.15lf秒\nあなたのflops　%.15lfFLOPS！！\n東北大のスパコンの1/%ld\n京の1/%ld\n", 
