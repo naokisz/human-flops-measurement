@@ -14,8 +14,8 @@
 
 int question(int numof_question) { 
 
-	int i_question, numof_correct_answers; 
-	double computer_add1, computer_add2, player_input; 
+	int i_question, numof_correct_answers = 0; 
+	double computer_add1, computer_add2, player_input = 0; 
 
 	/* 乱数の種まき　mainでやるべきだろうけれど面倒だからここに書いた。*/
 	srand(time(NULL)); 

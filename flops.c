@@ -63,7 +63,7 @@ int main(void) {
 		printf("京の1/%ld\n", 
 			(long)(10000000000000000 / (((double)numof_correct_answers) / ((end_ms.tv_sec - start_ms.tv_sec) + (end_ms.tv_usec - start_ms.tv_usec)*1.0E-6)))); 
 
-	} else printf("あなたのFLOPSが０のため、スーパーコンピューターと比較できません。\n"); // 0除算の例外処理
+	} else printf("あなたのFLOPSが0のため、スーパーコンピューターと比較できません。\n"); // 0除算の例外処理
 
 	return 0;
 }
