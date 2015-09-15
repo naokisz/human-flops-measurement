@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <sys/time.h> // to use gettimeofday :33,35
-#include "question.c" // to use question() :34,21
+#include <sys/time.h> // to use gettimeofday
+#include "question.c" // to use question()
 
 int main(void) {
 

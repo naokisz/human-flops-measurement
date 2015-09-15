@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h> // to use fabs :33
+#include <math.h> // to use fabs
 
 /* int question
 
@@ -42,4 +42,3 @@ int question(int numof_question) {
 
 	return numof_correct_answers; 
 }
-
