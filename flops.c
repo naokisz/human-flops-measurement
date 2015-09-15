@@ -43,25 +43,30 @@ int main(void) {
 
 	printf("正解数　%d問！！\n", numof_correct_answers);
 
-	/*時間は秒単位でもマイクロ秒単位でもそれぞれ終わった時間から始めた時間を引いて,それぞれを足す。マイクロ秒の方の*1.0E-6は意味不明。*/
+	/*時間は秒単位でもマイクロ秒単位でもそれぞれ終わった時間から始めた時間を引いて,それぞれを足す。
+		マイクロ秒の方の*1.0E-6は意味不明。*/
 	printf("時間　%.15lf秒！！\n", 
 		((end_ms.tv_sec - start_ms.tv_sec) + (end_ms.tv_usec - start_ms.tv_usec)*1.0E-6)); 
 
 	/*１秒あたりの正解数　＝　FLOPS*/
 	printf("あなたのFLOPS　%.15lfFLOPS！！\n", 
-		((double)numof_correct_answers) / ((end_ms.tv_sec - start_ms.tv_sec) + (end_ms.tv_usec - start_ms.tv_usec)*1.0E-6)); 
+		((double)numof_correct_answers) 
+			/ ((end_ms.tv_sec - start_ms.tv_sec) + (end_ms.tv_usec - start_ms.tv_usec)*1.0E-6)); 
 
 	/*0除算例外処理のため*/
-	if (((double)numof_correct_answers) / ((end_ms.tv_sec - start_ms.tv_sec) + (end_ms.tv_usec - start_ms.tv_usec)*1.0E-6) != 0) {
+	if (((double)numof_correct_answers) 
+		/ ((end_ms.tv_sec - start_ms.tv_sec) + (end_ms.tv_usec - start_ms.tv_usec)*1.0E-6) != 0) {
 
 		/*東北大のスパコンとの比較*/
 		/*TODO:この辺りprintfの引数などが横に長く連なっているので修正したい。*/
 		printf("東北大のスーパーコンピューターの1/%ld\n", 
-			(long)(707000000000000 / (((double)numof_correct_answers) / ((end_ms.tv_sec - start_ms.tv_sec) + (end_ms.tv_usec - start_ms.tv_usec)*1.0E-6))));
+			(long)(707000000000000 / (((double)numof_correct_answers) 
+				/ ((end_ms.tv_sec - start_ms.tv_sec) + (end_ms.tv_usec - start_ms.tv_usec)*1.0E-6))));
 
 		/* 京との比較*/
 		printf("京の1/%ld\n", 
-			(long)(10000000000000000 / (((double)numof_correct_answers) / ((end_ms.tv_sec - start_ms.tv_sec) + (end_ms.tv_usec - start_ms.tv_usec)*1.0E-6)))); 
+			(long)(10000000000000000 / (((double)numof_correct_answers) 
+				/ ((end_ms.tv_sec - start_ms.tv_sec) + (end_ms.tv_usec - start_ms.tv_usec)*1.0E-6)))); 
 
 	} else printf("あなたのFLOPSが0のため、スーパーコンピューターと比較できません。\n"); // 0除算の例外処理
 
