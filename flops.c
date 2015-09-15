@@ -58,7 +58,6 @@ int main(void) {
 		/ ((end_ms.tv_sec - start_ms.tv_sec) + (end_ms.tv_usec - start_ms.tv_usec)*1.0E-6) != 0) {
 
 		/*東北大のスパコンとの比較*/
-		/*TODO:この辺りprintfの引数などが横に長く連なっているので修正したい。*/
 		printf("東北大のスーパーコンピューターの1/%ld\n", 
 			(long)(707000000000000 / (((double)numof_correct_answers) 
 				/ ((end_ms.tv_sec - start_ms.tv_sec) + (end_ms.tv_usec - start_ms.tv_usec)*1.0E-6))));
