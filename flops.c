@@ -49,22 +49,22 @@ int main(void) {
 		((end_ms.tv_sec - start_ms.tv_sec) + (end_ms.tv_usec - start_ms.tv_usec)*1.0E-6)); 
 
 	/*１秒あたりの正解数　＝　FLOPS*/
-	printf("あなたのFLOPS　%.15lfFLOPS！！\n", 
-		((double)numof_correct_answers) 
+	printf("あなたのFLOPS　%.15LfFLOPS！！\n", 
+		((long double)numof_correct_answers) 
 			/ ((end_ms.tv_sec - start_ms.tv_sec) + (end_ms.tv_usec - start_ms.tv_usec)*1.0E-6)); 
 
 	/*0除算例外処理のため*/
-	if (((double)numof_correct_answers) 
+	if (((long double)numof_correct_answers) 
 		/ ((end_ms.tv_sec - start_ms.tv_sec) + (end_ms.tv_usec - start_ms.tv_usec)*1.0E-6) != 0) {
 
 		/*東北大のスパコンとの比較*/
-		printf("東北大のスーパーコンピューターの1/%ld\n", 
-			(long)(707000000000000 / (((double)numof_correct_answers) 
+		printf("東北大のスーパーコンピューターの1/%Ld\n", 
+			(long long)(707000000000000 / (((long double)numof_correct_answers) 
 				/ ((end_ms.tv_sec - start_ms.tv_sec) + (end_ms.tv_usec - start_ms.tv_usec)*1.0E-6))));
 
 		/* 京との比較*/
-		printf("京の1/%ld\n", 
-			(long)(10000000000000000 / (((double)numof_correct_answers) 
+		printf("京の1/%Ld\n", 
+			(long long)(10000000000000000 / (((long double)numof_correct_answers) 
 				/ ((end_ms.tv_sec - start_ms.tv_sec) + (end_ms.tv_usec - start_ms.tv_usec)*1.0E-6)))); 
 
 	} else printf("あなたのFLOPSが0のため、スーパーコンピューターと比較できません。\n"); // 0除算の例外処理
