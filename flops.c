@@ -1,11 +1,23 @@
 #include <stdio.h>
 #include <sys/time.h> // to use gettimeofday
 #include "question.c" // to use question()
+#include <string.h>
 
-int main(void) {
+int main(int argc, char*argv[]) {
 
 	int numof_correct_answers = 0, if_practice; // numof_correct_answersは正解数。
 	struct timeval start_ms, end_ms; // to use gettimeofday()
+
+	if(argc == 2 && strcmp(argv[1], "--help") == 0) {
+
+		printf("ヘルプ\n\n");
+		printf("このプログラムについて\n");
+		printf("10問の簡単な計算問題を解いてもらった結果からあなたのFLOPSを計算し、結果を代表的なスーパーコンピューターと比較します。\n\n");
+		printf("オプション\n");
+		printf("--help：このヘルプを表示します。\n\n");
+
+		return 0;
+	}
 
 	printf("スーパーコンピューターと計算能力比べ!!!\n");
 
